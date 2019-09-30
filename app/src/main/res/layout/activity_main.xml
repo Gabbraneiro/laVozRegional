@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DEDEDE"
     tools:context=".MainActivity">
 
     <Button
@@ -12,5 +13,31 @@
         android:layout_height="wrap_content"
         android:text="Play" />
 
+    <ImageView
+        android:id="@+id/img_inicio"
+        android:layout_width="231dp"
+        android:layout_height="317dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_radio" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/btn_play_stop"
+        android:layout_width="81dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginBottom="107dp"
+        android:background="@drawable/logo_radio" />
+
+    <ImageButton
+        android:id="@+id/btn_mute"
+        android:layout_width="81dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginBottom="107dp"
+        android:background="@drawable/logo_radio" />
+
+</RelativeLayout>
