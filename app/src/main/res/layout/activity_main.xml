@@ -18,7 +18,8 @@
         android:layout_width="231dp"
         android:layout_height="317dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo_radio" />
+        android:src="@drawable/logo_radio"
+        android:contentDescription="@string/img_logo" />
 
     <ImageButton
         android:id="@+id/btn_play_stop"
@@ -28,7 +29,8 @@
         android:layout_marginStart="115dp"
         android:layout_marginLeft="115dp"
         android:layout_marginBottom="107dp"
-        android:background="@drawable/logo_radio" />
+        android:background="@drawable/logo_radio"
+        android:contentDescription="@string/btn_play_stop" />
 
     <ImageButton
         android:id="@+id/btn_mute"
@@ -38,6 +40,7 @@
         android:layout_marginStart="165dp"
         android:layout_marginLeft="165dp"
         android:layout_marginBottom="107dp"
-        android:background="@drawable/logo_radio" />
+        android:background="@drawable/logo_radio"
+        android:contentDescription="@string/btn_mute"/>
 
 </RelativeLayout>
