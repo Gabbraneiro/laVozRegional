@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private ImageView buttonInstagram;
     private boolean playing;
     private boolean muted;
-    private String urlRedSocial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,14 +69,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 muted = false;
             }
         } else if (v == buttonFacebook) {
-            urlRedSocial = "https://www.facebook.com/RCH90.9/";
-            goToSocialNetwork();
+            goToSocialNetwork(getString(R.string.url_face));
         } else if (v == buttonTwitter) {
-            urlRedSocial = "https://twitter.com/rch909?s=08";
-            goToSocialNetwork();
+            goToSocialNetwork(getString(R.string.url_tw));
         } else if (v == buttonInstagram) {
-            urlRedSocial = "https://www.instagram.com/marcaregistrada.2019/?igshid=ov0r1tdjjabu";
-            goToSocialNetwork();
+            goToSocialNetwork(getString(R.string.url_insta));
         }
     }
 
@@ -92,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     public void startPlaying() {
         try {
-            //player.reset();
+            player.reset();
             player.setDataSource(url);
             player.setAudioStreamType(AudioManager.STREAM_MUSIC);
             player.setOnPreparedListener(new OnPreparedListener() {
@@ -130,8 +126,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         buttonMute.setBackgroundResource(R.drawable.ic_volume_up_black_24dp);
     }
 
-    public void goToSocialNetwork() {
-        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(urlRedSocial));
+    public void goToSocialNetwork(String url) {
+        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browse);
     }
 }

@@ -9,52 +9,57 @@
     android:clipChildren="false"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/redes_sociales"
+    <TableLayout
+        android:id="@+id/redes_sociales_table"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="false"
-        android:animateLayoutChanges="false"
-        android:gravity="center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:stretchColumns="0,1,2">
 
-        <ImageView
-            android:id="@+id/facebook"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:clickable="true"
-            android:contentDescription="@string/link_face"
-            app:srcCompat="@drawable/ic_facebook" />
+        <TableRow
+            android:id="@+id/redes_sociales_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
-        <ImageView
-            android:id="@+id/twitter"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_toEndOf="@id/facebook"
-            android:layout_toRightOf="@id/facebook"
-            android:clickable="true"
-            android:contentDescription="@string/link_tw"
-            app:srcCompat="@drawable/ic_gorjeo" />
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#4267b2"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/link_face"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:srcCompat="@drawable/ic_facebook" />
 
-        <ImageView
-            android:id="@+id/instagram"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_toEndOf="@id/twitter"
-            android:layout_toRightOf="@id/twitter"
-            android:clickable="true"
-            android:contentDescription="@string/link_insta"
-            app:srcCompat="@drawable/ic_instagram" />
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#1da1f2"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/link_tw"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:srcCompat="@drawable/ic_twitter" />
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/instagram"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#C13584"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/link_insta"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:srcCompat="@drawable/ic_instagram" />
+        </TableRow>
+
+    </TableLayout>
 
     <ImageButton
         android:id="@+id/btn_play_stop"
@@ -66,6 +71,7 @@
         android:layout_marginRight="-200dp"
         android:layout_toStartOf="@id/img_inicio"
         android:layout_toLeftOf="@id/img_inicio"
+        android:adjustViewBounds="false"
         android:background="@drawable/ic_play_circle_filled_black_24dp"
         android:contentDescription="@string/btn_play_stop" />
 
