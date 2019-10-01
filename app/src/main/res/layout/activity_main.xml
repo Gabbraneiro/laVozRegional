@@ -23,28 +23,34 @@
 
         <ImageView
             android:id="@+id/facebook"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:clickable="true"
             android:contentDescription="@string/link_face"
             app:srcCompat="@drawable/ic_facebook" />
 
         <ImageView
             android:id="@+id/twitter"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_toRightOf="@id/facebook"
             android:layout_toEndOf="@id/facebook"
+            android:layout_toRightOf="@id/facebook"
+            android:clickable="true"
             android:contentDescription="@string/link_tw"
             app:srcCompat="@drawable/ic_gorjeo" />
 
         <ImageView
             android:id="@+id/instagram"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_toRightOf="@id/twitter"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
             android:layout_toEndOf="@id/twitter"
+            android:layout_toRightOf="@id/twitter"
+            android:clickable="true"
             android:contentDescription="@string/link_insta"
             app:srcCompat="@drawable/ic_instagram" />
 
@@ -52,8 +58,8 @@
 
     <ImageButton
         android:id="@+id/btn_play_stop"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_below="@id/img_inicio"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="-200dp"
@@ -65,8 +71,8 @@
 
     <ImageView
         android:id="@+id/img_inicio"
-        android:layout_width="280dp"
-        android:layout_height="336dp"
+        android:layout_width="240dp"
+        android:layout_height="298dp"
         android:layout_centerInParent="true"
         android:layout_marginStart="102dp"
         android:layout_marginLeft="102dp"
@@ -77,11 +83,11 @@
 
     <ImageButton
         android:id="@+id/btn_mute"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_below="@id/img_inicio"
-        android:layout_marginStart="-100dp"
-        android:layout_marginLeft="-100dp"
+        android:layout_marginStart="-95dp"
+        android:layout_marginLeft="-95dp"
         android:layout_marginTop="23dp"
         android:layout_toEndOf="@id/img_inicio"
         android:layout_toRightOf="@id/img_inicio"
