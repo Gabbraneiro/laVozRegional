@@ -8,7 +8,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnBufferingUpdateListener;
 import android.media.MediaPlayer.OnPreparedListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     private MediaPlayer player;
     private String url;
-    private Button buttonPlay;
+    private ImageButton buttonPlay;
     private boolean playing;
 
     @Override
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         url = getString(R.string.app_url);
-        buttonPlay = findViewById(R.id.play);
+        buttonPlay = findViewById(R.id.btn_play_stop);
         buttonPlay.setOnClickListener(this);
         playing = false;
         // Inicializo el objeto MediaPlayer
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             player.setOnPreparedListener(new OnPreparedListener() {
                 public void onPrepared(MediaPlayer mp) {
                     player.start();
-                    buttonPlay.setText(R.string.radio_stop);
+                    buttonPlay.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
                 }
             });
             player.prepareAsync();
@@ -82,6 +82,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
             player.release();
             initializeMediaPlayer();
         }
-        buttonPlay.setText(R.string.radio_play);
+        buttonPlay.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
     }
 }

@@ -2,45 +2,90 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DEDEDE"
+    android:clipChildren="false"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/redes_sociales"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play" />
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:animateLayoutChanges="false"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
-    <ImageView
-        android:id="@+id/img_inicio"
-        android:layout_width="231dp"
-        android:layout_height="317dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/logo_radio"
-        android:contentDescription="@string/img_logo" />
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/link_face"
+            app:srcCompat="@drawable/ic_facebook" />
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/facebook"
+            android:layout_toEndOf="@id/facebook"
+            android:contentDescription="@string/link_tw"
+            app:srcCompat="@drawable/ic_gorjeo" />
+
+        <ImageView
+            android:id="@+id/instagram"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_toRightOf="@id/twitter"
+            android:layout_toEndOf="@id/twitter"
+            android:contentDescription="@string/link_insta"
+            app:srcCompat="@drawable/ic_instagram" />
+
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/btn_play_stop"
-        android:layout_width="81dp"
-        android:layout_height="64dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginBottom="107dp"
-        android:background="@drawable/logo_radio"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/img_inicio"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="-200dp"
+        android:layout_marginRight="-200dp"
+        android:layout_toStartOf="@id/img_inicio"
+        android:layout_toLeftOf="@id/img_inicio"
+        android:background="@drawable/ic_play_circle_filled_black_24dp"
         android:contentDescription="@string/btn_play_stop" />
+
+    <ImageView
+        android:id="@+id/img_inicio"
+        android:layout_width="280dp"
+        android:layout_height="336dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginRight="102dp"
+        android:contentDescription="@string/img_logo"
+        android:src="@drawable/logo_radio" />
 
     <ImageButton
         android:id="@+id/btn_mute"
-        android:layout_width="81dp"
-        android:layout_height="64dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="165dp"
-        android:layout_marginLeft="165dp"
-        android:layout_marginBottom="107dp"
-        android:background="@drawable/logo_radio"
-        android:contentDescription="@string/btn_mute"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/img_inicio"
+        android:layout_marginStart="-100dp"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginTop="23dp"
+        android:layout_toEndOf="@id/img_inicio"
+        android:layout_toRightOf="@id/img_inicio"
+        android:background="@drawable/ic_volume_up_black_24dp"
+        android:contentDescription="@string/btn_mute" />
 
 </RelativeLayout>

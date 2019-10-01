@@ -6,4 +6,7 @@
     <string name="btn_play_stop">Botón play/stop</string>
     <string name="btn_mute">Botón mute</string>
     <string name="img_logo">Imagen logo de la radio</string>
+    <string name="link_face">Link a Facebook</string>
+    <string name="link_tw">Link a Twitter</string>
+    <string name="link_insta">Link a Instagram</string>
 </resources>
