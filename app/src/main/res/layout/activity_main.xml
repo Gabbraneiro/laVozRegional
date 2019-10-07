@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
-        android:stretchColumns="0,1,2">
+        android:stretchColumns="0,1,2,3">
 
         <TableRow
             android:id="@+id/redes_sociales_row"
@@ -28,8 +28,8 @@
                 android:layout_height="60dp"
                 android:background="#4267b2"
                 android:clickable="true"
-                android:focusable="true"
                 android:contentDescription="@string/link_face"
+                android:focusable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:srcCompat="@drawable/ic_facebook" />
@@ -40,8 +40,8 @@
                 android:layout_height="60dp"
                 android:background="#1da1f2"
                 android:clickable="true"
-                android:focusable="true"
                 android:contentDescription="@string/link_tw"
+                android:focusable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:srcCompat="@drawable/ic_twitter" />
@@ -52,11 +52,23 @@
                 android:layout_height="60dp"
                 android:background="#C13584"
                 android:clickable="true"
-                android:focusable="true"
                 android:contentDescription="@string/link_insta"
+                android:focusable="true"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 app:srcCompat="@drawable/ic_instagram" />
+
+            <ImageView
+                android:id="@+id/whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#128c7e"
+                android:clickable="true"
+                android:contentDescription="@string/link_wsapp"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:srcCompat="@drawable/ic_whatsapp" />
         </TableRow>
 
     </TableLayout>

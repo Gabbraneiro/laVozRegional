@@ -10,6 +10,7 @@ import android.view.View;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnBufferingUpdateListener;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private ImageView buttonFacebook;
     private ImageView buttonTwitter;
     private ImageView buttonInstagram;
+    private ImageView buttonWhtasapp;
     private boolean playing;
     private boolean muted;
 
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         buttonTwitter.setOnClickListener(this);
         buttonInstagram = findViewById(R.id.instagram);
         buttonInstagram.setOnClickListener(this);
+        buttonWhtasapp = findViewById(R.id.whatsapp);
+        buttonWhtasapp.setOnClickListener(this);
         playing = false;
         muted = false;
         // Inicializo el objeto MediaPlayer
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             goToSocialNetwork(getString(R.string.url_tw));
         } else if (v == buttonInstagram) {
             goToSocialNetwork(getString(R.string.url_insta));
+        } else if (v == buttonWhtasapp) {
+            goToSocialNetwork(getString(R.string.url_wsapp)+getString(R.string.numero_wsapp));
         }
     }
 
@@ -95,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 public void onPrepared(MediaPlayer mp) {
                     player.start();
                     buttonPlay.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
+                    player.setOnCompletionListener(new OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mp) {
+                            mp.release();
+
+                        }
+                    });
                 }
             });
             player.prepareAsync();

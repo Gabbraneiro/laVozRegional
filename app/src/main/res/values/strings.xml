@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">La voz regional - FM 90.9</string>
-    <string name="app_url">https://radio02.ferozo.com:8042/;stream/1</string>
+    <string name="app_url">http://radio02.ferozo.com:8042/;stream/1</string>
+    <!--<string name="app_url">http://s6.stweb.tv/radio10/live/chunks.m3u8</string>-->
     <string name="radio_stop">Stop</string>
     <string name="radio_play">Play</string>
     <string name="btn_play_stop">Botón play/stop</string>
@@ -8,8 +9,10 @@
     <string name="img_logo">Imagen logo de la radio</string>
     <string name="link_face">Link a Facebook</string>
     <string name="link_tw">Link a Twitter</string>
-    <string name="link_insta">Link a Instagram</string>
+    <string name="link_wsapp">Link a Whatsapp</string>
     <string name="url_face">https://facebook.com/RCH90.9/</string>
     <string name="url_tw">https://twitter.com/rch909?s=08</string>
     <string name="url_insta">https://instagram.com/marcaregistrada.2019/?igshid=ov0r1tdjjabu</string>
+    <string name="url_wsapp">https://api.whatsapp.com/send?phone=</string>
+    <string name="numero_wsapp">5492944240206</string>
 </resources>
