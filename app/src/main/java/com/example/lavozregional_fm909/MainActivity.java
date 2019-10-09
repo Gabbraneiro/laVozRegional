@@ -101,12 +101,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 public void onPrepared(MediaPlayer mp) {
                     player.start();
                     buttonPlay.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
-                    player.setOnCompletionListener(new OnCompletionListener() {
-                        public void onCompletion(MediaPlayer mp) {
-                            mp.release();
-
-                        }
-                    });
                 }
             });
             player.prepareAsync();
