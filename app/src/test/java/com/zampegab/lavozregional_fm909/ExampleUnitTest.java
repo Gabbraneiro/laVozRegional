@@ -1,4 +1,4 @@
-package com.example.lavozregional_fm909;
+package com.zampegab.lavozregional_fm909;
 
 import org.junit.Test;
 
