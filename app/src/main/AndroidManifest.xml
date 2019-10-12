@@ -21,14 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver
-            android:name=".VolumeChangeReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.media.VOLUME_CHANGED_ACTION" />
-            </intent-filter>
-        </receiver>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
