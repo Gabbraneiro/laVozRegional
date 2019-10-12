@@ -1,33 +1,23 @@
 package com.zampegab.lavozregional_fm909;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.IOException;
 
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnBufferingUpdateListener;
-import android.media.MediaPlayer.OnPreparedListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
-import android.util.Log;
 import android.widget.Toast;
 import android.content.Intent;
-
-import com.spoledge.aacdecoder.AACPlayer;
-
 import com.spoledge.aacdecoder.AACPlayer;
 import com.spoledge.aacdecoder.PlayerCallback;
 import android.media.AudioTrack;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
-    //private MediaPlayer player;
     private AACPlayer player;
+    private AudioManager audioManager;
     private String url;
     private ImageButton buttonPlay;
     private ImageButton buttonMute;
@@ -37,11 +27,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private ImageView buttonWhtasapp;
     private boolean playing;
     private boolean muted;
+    private int volumenAnterior;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        audioManager = (AudioManager)getSystemService(this.AUDIO_SERVICE);
         url = getString(R.string.app_url);
         buttonPlay = findViewById(R.id.btn_play_stop);
         buttonPlay.setOnClickListener(this);
@@ -57,10 +49,25 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         buttonWhtasapp.setOnClickListener(this);
         playing = false;
         muted = false;
-        // Inicializo el objeto AACPlayer
+        volumenAnterior = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
         initalizeAACPlayer();
 
+    }
 
+    protected void onResume(){
+        super.onResume();
+        volumenAnterior = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        if(volumenAnterior != 100){
+            commute();
+        }
+        else{
+            mutate();
+        }
+
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        commute();
     }
 
     public void onClick(View v) {
@@ -72,10 +79,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         } else if (v == buttonMute) {
             if (!muted) {
-                //mutate();
+                mutate();
                 muted = true;
             } else {
-                //commute();
+                commute();
                 muted = false;
             }
         } else if (v == buttonFacebook) {
@@ -127,17 +134,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         player.stop();
         buttonPlay.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
     }
-/*
+
     public void mutate() {
-        player.setVolume(0, 0);
+        volumenAnterior = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, -100,0);
         buttonMute.setBackgroundResource(R.drawable.ic_volume_off_black_24dp);
+
     }
 
     public void commute() {
-        player.setVolume(1, 1);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volumenAnterior,0);
         buttonMute.setBackgroundResource(R.drawable.ic_volume_up_black_24dp);
     }
- */
+
 
     public void goToSocialNetwork(String url) {
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
