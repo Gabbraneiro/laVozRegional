@@ -54,17 +54,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
-    protected void onResume(){
+/*    protected void onResume(){
         super.onResume();
-        volumenAnterior = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        if(volumenAnterior != 100){
-            commute();
-        }
-        else{
-            mutate();
-        }
+    }*/
 
-    }
     protected void onDestroy() {
         super.onDestroy();
         commute();
@@ -112,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             public void playerException(Throwable t) {
                 MainActivity.this.playing = false;
+                MainActivity.this.stopPlaying();
             }
 
             public void playerMetadata(String key, String value) {
@@ -126,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             buttonPlay.setBackgroundResource(R.drawable.ic_pause_circle_filled_black_24dp);
             player.playAsync(this.url,128);
         } catch (IllegalArgumentException | SecurityException | IllegalStateException  e) {
+            buttonPlay.setBackgroundResource(R.drawable.ic_play_circle_filled_black_24dp);
             Toast.makeText(getApplicationContext(),"Error al conectar con la radio", Toast.LENGTH_LONG).show();
         }
     }
