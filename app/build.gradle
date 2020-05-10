@@ -8,11 +8,11 @@ android {
         minSdkVersion 14
         targetSdkVersion 29
         versionCode 2
-        versionName "1.0.1"
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
         ndk {
-            abiFilters "armeabi-v7a", "x86", "armeabi", "mips", "arm64-v8A", "mips64", "x86_64"
+            abiFilters "armeabi-v7a", "x86", "armeabi", "mips", "arm64-v8a", "mips64", "x86_64"
         }
     }
     buildTypes {
